@@ -1,6 +1,6 @@
 import { storiesOf, addDecorator } from '@storybook/svelte';
 
-import TaskList from './TaskList.svelte';
+import PureTaskList from './PureTaskList.svelte';
 import { task, actions } from './Task.stories';
 
 export const defaultTasks = [
@@ -17,10 +17,10 @@ export const withPinnedTasks = [
   { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
 ];
 
-storiesOf('TaskList', module)
+storiesOf('PureTaskList', module)
   .add('default', () => {
     return {
-      Component: TaskList,
+      Component: PureTaskList,
       props: {
         tasks: defaultTasks,
       },
@@ -31,7 +31,7 @@ storiesOf('TaskList', module)
   })
   .add('withPinnedTasks', () => {
     return {
-      Component: TaskList,
+      Component: PureTaskList,
       props: {
         tasks: withPinnedTasks,
       },
@@ -42,7 +42,7 @@ storiesOf('TaskList', module)
   })
   .add('loading', () => {
     return {
-      Component: TaskList,
+      Component: PureTaskList,
       props: {
         loading: true,
       },
@@ -53,7 +53,7 @@ storiesOf('TaskList', module)
   })
   .add('empty', () => {
     return {
-      Component: TaskList,
+      Component: PureTaskList,
       on: {
         ...actions,
       },

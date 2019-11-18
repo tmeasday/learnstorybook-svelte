@@ -1,9 +1,9 @@
-import TaskList from './TaskList.svelte';
+import PureTaskList from './PureTaskList.svelte';
 import { render } from '@testing-library/svelte';
-import { withPinnedTasks } from './TaskList.stories';
-describe('TaskList', () => {
+import { withPinnedTasks } from './PureTaskList.stories';
+describe('PureTaskList', () => {
   it('renders pinned tasks at the start of the list', () => {
-    const { container } = render(TaskList, {
+    const { container } = render(PureTaskList, {
       props: {
         tasks: withPinnedTasks,
       },
