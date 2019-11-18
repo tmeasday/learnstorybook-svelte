@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/svelte';
 import { action } from '@storybook/addon-actions';
+import { withKnobs, object } from '@storybook/addon-knobs';
 
 import Task from './Task.svelte';
 
@@ -16,11 +17,12 @@ export const actions = {
 };
 
 storiesOf('Task', module)
+  .addDecorator(withKnobs)
   .add('default', () => {
     return {
       Component: Task,
       props: {
-        task,
+        task: object('task', { ...task }),
       },
       on: {
         ...actions,
