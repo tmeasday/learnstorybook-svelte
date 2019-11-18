@@ -35,7 +35,12 @@
     <span class="checkbox-custom" on:click={ArchiveTask} />
   </label>
   <div class="title">
-    <input type="text" readonly value={task.title} placeholder="Input title" />
+    <input
+      type="text"
+      readonly
+      value={task.title}
+      placeholder="Input title"
+      style="text-overflow: ellipsis;" />
   </div>
   <div class="actions">
     {#if task.state !== 'TASK_ARCHIVED'}
